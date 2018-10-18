@@ -18,6 +18,7 @@ class App extends Component {
     }
     this.maxInput=this.maxInput.bind(this);
     this.clearDisplay = this.clearDisplay.bind(this);
+    this.backSpace = this.backSpace.bind(this);
     this.handleOperators = this.handleOperators.bind(this);
     this.handleOperands = this.handleOperands.bind(this);
     this.handleDecimals = this.handleDecimals.bind(this);
@@ -37,6 +38,14 @@ class App extends Component {
       newValue: '0',
       oldValue: '0',
       expression: ''
+    });
+  }
+
+  backSpace(){
+    //console.log(this.state.expression);
+    this.setState({
+      newValue: '0',
+      expression: this.state.expression.slice(0,-1)
     });
   }
  
@@ -141,6 +150,7 @@ class App extends Component {
           <Expression expression={this.state.expression}/>
           <Display newValue={this.state.newValue}/>
           <Buttons clear={this.clearDisplay}
+                   back={this.backSpace}
                    operators={this.handleOperators}
                    operands={this.handleOperands}
                    decimal={this.handleDecimals}

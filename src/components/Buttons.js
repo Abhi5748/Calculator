@@ -6,6 +6,9 @@ class Buttons extends React.Component {
         <button id="clear" value="AC" onClick={this.props.clear}>
           AC
         </button>
+        <button id="back" value="C" onClick={this.props.back}>
+          C
+        </button>
         <button id="divide" value="/" onClick={this.props.operators}>
           /
         </button>
